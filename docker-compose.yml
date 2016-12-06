@@ -1,0 +1,12 @@
+services:
+  proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - '80:80'
+    volumes:
+      - '/var/run/docker.sock:/tmp/docker.sock'
+version: '2'
+networks:
+  default:
+    external:
+      name: services
