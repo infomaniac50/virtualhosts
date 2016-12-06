@@ -17,3 +17,6 @@ down:
 
 status:
 	docker-compose ps
+
+logs:
+	docker-compose logs # Use docker-compose logs -f if you want to 'tail' the log output.
