@@ -7,7 +7,7 @@ all: docker.status
 # use the 'all' rule as the default target).
 .PHONY: all
 
-docker.update: docker.destroy docker.pull docker.up
+docker.update: docker.pull docker.rmi docker.up
 
 docker.iter: docker.down docker.up
 
@@ -16,6 +16,9 @@ docker.up:
 
 docker.destroy:
 	docker-compose down --volumes --rmi 'local'
+
+docker.rmi:
+	docker-compose down --rmi 'local'
 
 docker.down:
 	docker-compose down
